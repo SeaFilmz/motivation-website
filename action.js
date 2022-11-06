@@ -7,59 +7,30 @@ function wordCount(wordArr, suffix) {
   }, 0);
 }
 
-function clickEvent(
-  button,
-  displayText,
-  rhyme,
-  suffix,
-  rhymeWordCount,
-  rhymeArr
-) {
+function clickEvent(button, selector, rhyme, suffix) {
+  const rhymeArr = rhyme.split(" ");
   button.addEventListener("click", () => {
     document.querySelector(
-      displayText
-    ).innerHTML = `<p>${rhyme}</p><p>Number of words ending with ${suffix}: ${rhymeWordCount}</p><p>Total number of words: ${rhymeArr.length}</p>`;
+      selector
+    ).innerHTML = `<p>${rhyme}</p><p>Number of words ending with ${suffix}: ${wordCount(
+      rhymeArr,
+      suffix
+    )}</p><p>Total number of words: ${rhymeArr.length}</p>`;
   });
 }
 
 const issueButton = document.querySelector("#issueButton");
 const issueRhyme = `If you have an issue you might need a tissue.`;
-const issueRhymeArr = issueRhyme.split(" ");
-const issueWordCount = wordCount(issueRhymeArr, "issue");
-
-clickEvent(
-  issueButton,
-  "#issueText",
-  issueRhyme,
-  "issue",
-  issueWordCount,
-  issueRhymeArr
-);
+clickEvent(issueButton, "#issueText", issueRhyme, "issue");
 
 const longButton = document.querySelector("#longButton");
 const ongRhyme = `If you think long you might think wrong.`;
-const ongRhymeArr = ongRhyme.split(" ");
-const ongWordCount = wordCount(ongRhymeArr, "ong");
-
-clickEvent(longButton, "#longText", ongRhyme, "ong", ongWordCount, ongRhymeArr);
+clickEvent(longButton, "#longText", ongRhyme, "ong");
 
 const schoolButton = document.querySelector("#schoolButton");
 const oolRhyme = `School is cool.`;
-const oolRhymeArr = oolRhyme.split(" ");
-const oolWordCount = wordCount(oolRhymeArr, "ool");
-
-clickEvent(
-  schoolButton,
-  "#schoolText",
-  oolRhyme,
-  "ool",
-  oolWordCount,
-  oolRhymeArr
-);
+clickEvent(schoolButton, "#schoolText", oolRhyme, "ool");
 
 const hateButton = document.querySelector("#hateButton");
 const ateRhyme = `Don't Hate Appreciate`;
-const ateRhymeArr = ateRhyme.split(" ");
-const ateWordCount = wordCount(ateRhymeArr, "ate");
-
-clickEvent(hateButton, "#hateText", ateRhyme, "ate", ateWordCount, ateRhymeArr);
+clickEvent(hateButton, "#hateText", ateRhyme, "ate");
