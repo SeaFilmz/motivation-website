@@ -3,20 +3,21 @@ const longButton = document.querySelector("#longButton");
 const schoolButton = document.querySelector("#schoolButton");
 const hateButton = document.querySelector("#hateButton");
 
+function wordCount(motivationTextArr, ryhmeWord) {
+  let count = 0;
+  for (let i = 0; i < motivationTextArr.length; i++) {
+    if (motivationTextArr[i].replaceAll(/[\.\?\!]/g, "").endsWith(ryhmeWord)) {
+      count = count + 1;
+    }
+  }
+  return count;
+}
+
 const issueRhyme = `If you have an issue you might need a tissue.`;
 
 const issueRhymeArr = issueRhyme.split(" ");
 
-let issueWordCount = 0;
-
-for (let i = 0; i < issueRhymeArr.length; i++) {
-  if (
-    issueRhymeArr[i].endsWith("issue") ||
-    issueRhymeArr[i].endsWith("issue.")
-  ) {
-    issueWordCount = issueWordCount + 1;
-  }
-}
+const issueWordCount = wordCount(issueRhymeArr, "issue");
 
 issueButton.addEventListener("click", function issueHelp() {
   document.querySelector(
@@ -28,13 +29,7 @@ const ongRhyme = `If you think long you might think wrong.`;
 
 const ongRhymeArr = ongRhyme.split(" ");
 
-let ongWordCount = 0;
-
-for (let i = 0; i < ongRhymeArr.length; i++) {
-  if (ongRhymeArr[i].endsWith("ong") || ongRhymeArr[i].endsWith("ong.")) {
-    ongWordCount = ongWordCount + 1;
-  }
-}
+const ongWordCount = wordCount(ongRhymeArr, "ong");
 
 longButton.addEventListener("click", function longHelp() {
   document.querySelector(
@@ -46,13 +41,7 @@ const oolRhyme = `School is cool.`;
 
 const oolRhymeArr = oolRhyme.split(" ");
 
-let oolWordCount = 0;
-
-for (let i = 0; i < oolRhymeArr.length; i++) {
-  if (oolRhymeArr[i].endsWith("ool") || oolRhymeArr[i].endsWith("ool.")) {
-    oolWordCount = oolWordCount + 1;
-  }
-}
+const oolWordCount = wordCount(oolRhymeArr, "ool");
 
 schoolButton.addEventListener("click", function schoolHelp() {
   document.querySelector(
@@ -64,13 +53,7 @@ const ateRhyme = `Don't Hate Appreciate`;
 
 const ateRhymeArr = ateRhyme.split(" ");
 
-let ateWordCount = 0;
-
-for (let i = 0; i < ateRhymeArr.length; i++) {
-  if (ateRhymeArr[i].endsWith("ate") || ateRhymeArr[i].endsWith("ate.")) {
-    ateWordCount = ateWordCount + 1;
-  }
-}
+const ateWordCount = wordCount(ateRhymeArr, "ate");
 
 hateButton.addEventListener("click", function hateHelp() {
   document.querySelector(
