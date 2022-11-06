@@ -1,8 +1,3 @@
-const issueButton = document.querySelector("#issueButton");
-const longButton = document.querySelector("#longButton");
-const schoolButton = document.querySelector("#schoolButton");
-const hateButton = document.querySelector("#hateButton");
-
 function wordCount(wordArr, suffix) {
   return wordArr.reduce((count, word) => {
     if (word.replaceAll(/[\.\?\!]/g, "").endsWith(suffix)) {
@@ -27,6 +22,7 @@ function clickEvent(
   });
 }
 
+const issueButton = document.querySelector("#issueButton");
 const issueRhyme = `If you have an issue you might need a tissue.`;
 const issueRhymeArr = issueRhyme.split(" ");
 const issueWordCount = wordCount(issueRhymeArr, "issue");
@@ -40,12 +36,14 @@ clickEvent(
   issueRhymeArr
 );
 
+const longButton = document.querySelector("#longButton");
 const ongRhyme = `If you think long you might think wrong.`;
 const ongRhymeArr = ongRhyme.split(" ");
 const ongWordCount = wordCount(ongRhymeArr, "ong");
 
 clickEvent(longButton, "#longText", ongRhyme, "ong", ongWordCount, ongRhymeArr);
 
+const schoolButton = document.querySelector("#schoolButton");
 const oolRhyme = `School is cool.`;
 const oolRhymeArr = oolRhyme.split(" ");
 const oolWordCount = wordCount(oolRhymeArr, "ool");
@@ -59,6 +57,7 @@ clickEvent(
   oolRhymeArr
 );
 
+const hateButton = document.querySelector("#hateButton");
 const ateRhyme = `Don't Hate Appreciate`;
 const ateRhymeArr = ateRhyme.split(" ");
 const ateWordCount = wordCount(ateRhymeArr, "ate");
