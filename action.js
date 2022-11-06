@@ -3,14 +3,13 @@ const longButton = document.querySelector("#longButton");
 const schoolButton = document.querySelector("#schoolButton");
 const hateButton = document.querySelector("#hateButton");
 
-function wordCount(motivationTextArr, ryhmeWord) {
-  let count = 0;
-  for (let i = 0; i < motivationTextArr.length; i++) {
-    if (motivationTextArr[i].replaceAll(/[\.\?\!]/g, "").endsWith(ryhmeWord)) {
+function wordCount(wordArr, suffix) {
+  return wordArr.reduce((count, word) => {
+    if (word.replaceAll(/[\.\?\!]/g, "").endsWith(suffix)) {
       count = count + 1;
     }
-  }
-  return count;
+    return count;
+  }, 0);
 }
 
 const issueRhyme = `If you have an issue you might need a tissue.`;
