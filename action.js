@@ -9,13 +9,13 @@ function wordCount(wordArr, suffix) {
 
 function clickEvent(button, selector, rhyme, suffix) {
   const rhymeArr = rhyme.split(" ");
+  const count = wordCount(rhymeArr, suffix);
+  const displayText = `<p>${rhyme}</p>
+    <p>Number of words ending with ${suffix}: ${count}</p>
+    <p>Total number of words: ${rhymeArr.length}</p>`;
+
   button.addEventListener("click", () => {
-    document.querySelector(
-      selector
-    ).innerHTML = `<p>${rhyme}</p><p>Number of words ending with ${suffix}: ${wordCount(
-      rhymeArr,
-      suffix
-    )}</p><p>Total number of words: ${rhymeArr.length}</p>`;
+    document.querySelector(selector).innerHTML = displayText;
   });
 }
 
