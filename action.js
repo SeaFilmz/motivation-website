@@ -14,6 +14,10 @@ const hateButton = document.querySelector("#hateButton");
 const ateRhyme = `Don't Hate Appreciate`;
 clickEvent(hateButton, "#hateText", ateRhyme, "ate");
 
+const believeButton = document.querySelector("#believeButton");
+const ieveRhyme = `If you believe it, you can achieve it`;
+clickEvent(believeButton, "#believeText", ieveRhyme, "ieve");
+
 function wordCount(wordArr, suffix) {
   return wordArr.reduce((count, word) => {
     if (word.replaceAll(/[\.\?\!]/g, "").endsWith(suffix)) {
