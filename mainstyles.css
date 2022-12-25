@@ -38,3 +38,11 @@ button {
   border-radius: 0.5rem;
   padding: 0.5rem;
 }
+
+#issueText,
+#longText,
+#schoolText,
+#hateText,
+#believeText {
+  margin-top: 0.75rem;
+}
